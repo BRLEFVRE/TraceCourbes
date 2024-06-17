@@ -98,7 +98,7 @@ plt.ioff()
 plt.rc('lines', linewidth=2.5)
 #fig, ax = plt.subplots(layout="constrained")
 fig, (ax1, ax2) = plt.subplots(2, 1, constrained_layout=False, sharex=True, sharey=False)
-fig.suptitle('Evolution of the temperatures of the Mosfets - Flyback circuit V2', fontsize=16, fontstyle='normal', weight='bold', x=0.5, y=0.94)
+fig.suptitle('Evolution of the temperatures of the Mosfets - Flyback circuit V2', fontsize=24, fontstyle='normal', weight='bold', x=0.5, y=0.94)
 #fig.suptitle("\n".join(["Evolution of the temperatures of the Mosfets and the main transformer"]*2), y=0.95)
 
 line1_1, = ax1.plot(time1, ch1_1, label='Higher Mosfet', color='r', linestyle='-')                     
@@ -119,23 +119,26 @@ line2_2, = ax2.plot(time2, ch2_2, dashes=[5, 8], label='Lower Mosfet', color='b'
 #line2_3, = ax2.plot(time2, ch2_3, dashes=[1, 8], label='Transformer (Box camera)', color='g')
 #line2_4, = ax2.plot(time2, ch2_4, dashes=[1, 8], label='Ambient', color='g')              
 
-ax1.set_xlabel('Time (s)', fontsize=12, fontstyle='normal', weight='bold')
-ax1.set_ylabel('Temperatures Fiber Optic (°C)', fontsize=12, fontstyle='normal', weight='bold')
+ax1.set_xlabel('Time (s)', fontsize=16, fontstyle='normal', weight='bold')
+ax1.set_ylabel('Temperatures Fiber Optic (°C)', fontsize=16, fontstyle='normal', weight='bold')
 #ax1.set_xlim(min(time1[0],time2[0]), max(time1[line_count1-1], time2[line_count2-1]))
 ax1.set_ylim(0, 120)
 ax1.set_xlim(1000, 8000)
+ax1.yaxis.set_tick_params(labelsize=16)             # taille de la police de graduation en y
 #ax1.set_xlim(time1[0], time1[line_count1-1])
 #ax1.set_xlim(34800, 44200)
-ax1.legend(handlelength=4, loc = 'center right')
+ax1.legend(handlelength=4, loc = 'center right', fontsize=16)
 
-ax2.set_xlabel('Time (s)', fontsize=12, fontstyle='normal', weight='bold')
-ax2.set_ylabel('Temperatures Camera (°C)', fontsize=12, fontstyle='normal', weight='bold')
+ax2.set_xlabel('Time (s)', fontsize=16, fontstyle='normal', weight='bold')
+ax2.set_ylabel('Temperatures Camera (°C)', fontsize=16, fontstyle='normal', weight='bold')
 #ax1.set_xlim(min(time1[0],time2[0]), max(time1[line_count1-1], time2[line_count2-1]))
+ax2.yaxis.set_tick_params(labelsize=16)             # taille de la police de graduation en y
+ax2.xaxis.set_tick_params(labelsize=16)             # taille de la police de graduation en x
 ax2.set_ylim(0, 120)
 ax2.set_xlim(1000, 8000)
 #ax2.set_xlim(time2[0], time2[line_count2-1])
 #ax2.set_xlim(34800, 44200)
-ax2.legend(handlelength=4, loc = 'center right')
+ax2.legend(handlelength=4, loc = 'center right', fontsize=16)
 
 # %%
 # -------------------------AFFICHAGE DES COURBES--------------------------

@@ -91,7 +91,7 @@ plt.ioff()
 # affichage pleine page(constrained_layout), on partage l'axe des x(sharex) et l'axe des Y (sharey)
 plt.rc('lines', linewidth=2.5)
 fig, ax = plt.subplots(constrained_layout=False)
-fig.suptitle('Evolution of the temperatures of the Mosfets and Main Transformer - Flyback circuit V2', fontsize=16, fontstyle='normal', weight='bold', x=0.5, y=0.94)
+fig.suptitle('Evolution of the temperatures of the Mosfets and Main Transformer - Flyback circuit V2', fontsize=24, fontstyle='normal', weight='bold', x=0.5, y=0.94)
 #fig.suptitle("\n".join(["Evolution of the temperatures of the Mosfets and the main transformer"]*2), y=0.95)
 
 line1_1, = ax.plot(time1, ch1_1, label='Higher Mosfet (Fiber Optic)', color='r', linestyle='-')                     
@@ -112,15 +112,17 @@ line2_2, = ax.plot(time2, ch2_2, dashes=[5, 8], label='Lower Mosfet (Box camera)
 #line2_3, = ax.plot(time2, ch2_3, dashes=[1, 8], label='Transformer (Box camera)', color='g')
 #line2_4, = ax.plot(time2, ch2_4, dashes=[6, 2], label='Ambient', color='g')              
 
-ax.set_xlabel('Time (s)', fontsize=12, fontstyle='normal', weight='bold')
-ax.set_ylabel('Temperatures (°C)', fontsize=12, fontstyle='normal', weight='bold')
+ax.set_xlabel('Time (s)', fontsize=16, fontstyle='normal', weight='bold')
+ax.set_ylabel('Temperatures (°C)', fontsize=16, fontstyle='normal', weight='bold')
 #ax.set_xlim(min(time1[0],time2[0]), max(time1[line_count1-1], time2[line_count2-1]))
 #ax.set_xlim(time1[0], time1[line_count1-1])
 #ax.set_xlim(time2[0], time2[line_count2-1])
+ax.yaxis.set_tick_params(labelsize=16)             # taille de la police de graduation en y
+ax.xaxis.set_tick_params(labelsize=16)             # taille de la police de graduation en x
 ax.set_xlim(1000, 8000)
 ax.set_ylim(0, 120)
 #ax.legend(loc = 'center right')
-ax.legend(handlelength=8, loc = 'center right')
+ax.legend(handlelength=8, loc = 'lower right', fontsize=16)
 
 # %%
 # -------------------------AFFICHAGE DES COURBES--------------------------
